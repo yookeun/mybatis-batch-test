@@ -20,7 +20,7 @@ CREATE TABLE test_book_origin
 /** 
  * test_book_origin 백업테이블 
  */
-CREATE TABLE test_book_orign_backup
+CREATE TABLE test_book_origin_backup
 (
 	bookID INT NOT NULL,
 	bookName VARCHAR(100) NOT NULL,
