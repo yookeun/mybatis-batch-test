@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="TestBook">
+
+	<select  id="selectListTestBook" resultType="TestBook" parameterType="map">
+		SELECT bookID, bookName, bookAuthor, bookType, originPrice, processYN, registDate FROM test_book_origin  LIMIT #{start}, #{limit}
+	</select>
+	
+	<update id="updateBatch1" parameterType="TestBook">
+		UPDATE test_book_origin SET originPrice = 0  WHERE bookID = #{bookID} 
+	</update>
+	
+	<update id="updateBatch2" parameterType="map">
+		UPDATE test_book_origin SET originPrice = 0 WHERE bookID IN
+		<foreach item="testBook" index="index" collection="list" open="(" separator="," close=")">
+			#{testBook.bookID}
+		</foreach>		
+	</update>	
+	
+	<insert id="insertBatch1" parameterType="TestBook">
+		INSERT INTO test_book_origin_backup(bookID, bookName, bookAuthor, bookType, originPrice, processYN, registDate)
+		VALUES(#{bookID}, #{bookName}, #{bookAuthor}, #{bookType}, #{originPrice}, #{processYN}, NOW())
+	</insert>
+	
+	<insert id="insertBatch2" parameterType="map">
+		INSERT INTO test_book_origin_backup(bookID, bookName, bookAuthor, bookType, originPrice, processYN, registDate)
+		VALUES
+		<foreach item="testBook" index="index" collection="list" open="" separator="," close="">
+			(#{testBook.bookID}, #{testBook.bookName}, #{testBook.bookAuthor}, #{testBook.bookType}, #{testBook.originPrice}, #{testBook.processYN}, NOW())
+		</foreach>		
+	</insert>	
+</mapper>    
