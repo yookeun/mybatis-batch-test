@@ -36,7 +36,7 @@ BEGIN
 	SET x = 1;
 	WHILE x <= _count DO		
 		INSERT INTO test_book(bookName,  originPrice,  registDate) 
-		VALUE(concat("a","-",x), concat("p",""+x), originPrice, NOW());
+		VALUE(concat("a","-",x),  originPrice, NOW());
 		SET x = x + 1;
     END WHILE;
 	SELECT COUNT(*) FROM test_book;
