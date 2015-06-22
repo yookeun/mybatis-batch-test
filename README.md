@@ -53,15 +53,15 @@ BatchTestMain 에서 각각의 용도이 메소드를 주석을 해제한후에 
 
 **아래 주석을 풀면서 테스트할 수 있음**
 
-sqlSession 업데이트 배치 처리 
-> //main.executeUpdateBatch("1");
+sqlSession 업데이트 배치 처리 (test_book.originPrice를 0으로 업데이트)
+> //main.executeUpdateBatch("1"); 
 
-foreach 업데이트 배치 처리 
+foreach 업데이트 배치 처리 (test_book.originPrice를 0으로 업데이트)
 > //main.executeUpdateBatch("2");
 		
-sqlSession 인서트 배치 처리
+sqlSession 인서트 배치 처리 (test_book의 모든 레코드를 test_book_backup으로 인서트)
 > //main.executeInsertBatch("1");
 		
-foreach 인서트  배치 처리
+foreach 인서트  배치 처리 (test_book의 모든 레코드를 test_book_backup으로 인서트)
 > //main.executeInsertBatch("2");
 
