@@ -18,13 +18,20 @@ public class BatchTestMain {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(SPRING_CONFIG_XML);		
 		BatchTestMain main = ctx.getBean(BatchTestMain.class);
 		
-		// sqlSession 배치 처리 
+		System.out.println("Batch Start...");
+		
+		//아래 주석을 풀면서 테스트할 수 있음 
+		//sqlSession 업데이트 배치 처리 
 		//main.executeUpdateBatch("1");
+
+		//foreach 업데이트 배치 처리 
+		//main.executeUpdateBatch("2");		
+		
+		//sqlSession 인서트 배치 처리
 		//main.executeInsertBatch("1");
 		
-		//foreach 배치 처리 
-		//main.executeUpdateBatch("2");		
-		main.executeInsertBatch("2");
+		//foreach 인서트  배치 처리
+		//main.executeInsertBatch("2");
 	}
 	
 	@Autowired
@@ -36,6 +43,7 @@ public class BatchTestMain {
 	 * @param batchType
 	 */
 	private void executeUpdateBatch(String batchType) {
+	
 		long startTime = System.currentTimeMillis();	
 		bookController.executeUpdateBatch(batchType);
 		long endTime = System.currentTimeMillis();	

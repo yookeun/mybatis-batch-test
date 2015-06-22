@@ -11,14 +11,9 @@ import java.io.Serializable;
 public class TestBook implements Serializable {
 	
 	private int bookID;				//고유키
-	private String bookName;	//책명	
-	private String bookAuthor;	//작가
-	private String bookType;	//1: 소설, 2: 비즈니스, 3: 예술
-	private double originPrice;	//원래가격
-	private double sellPrice;		//팔가격 
-	private String processYN;	//처리여부 : 해당되는 테이블로 처리되면 Y 
-	private String registDate;	//등록일 
-	private String bookTable;	//결과에 넣을 테이블명 
+	private String bookName;	//책명
+	private double originPrice;	//원래가격	
+	private String registDate;	//등록일	 
 	
 	public int getBookID() {
 		return bookID;
@@ -32,47 +27,19 @@ public class TestBook implements Serializable {
 	public void setBookName(String bookName) {
 		this.bookName = bookName;
 	}
-	public String getBookAuthor() {
-		return bookAuthor;
-	}
-	public void setBookAuthor(String bookAuthor) {
-		this.bookAuthor = bookAuthor;
-	}
-	public String getBookType() {
-		return bookType;
-	}
-	public void setBookType(String bookType) {
-		this.bookType = bookType;
-	}
+	
 	public double getOriginPrice() {
 		return originPrice;
 	}
 	public void setOriginPrice(double originPrice) {
 		this.originPrice = originPrice;
 	}
-	public double getSellPrice() {
-		return sellPrice;
-	}
-	public void setSellPrice(double sellPrice) {
-		this.sellPrice = sellPrice;
-	}
-	public String getProcessYN() {
-		return processYN;
-	}
-	public void setProcessYN(String processYN) {
-		this.processYN = processYN;
-	}
+	
 	public String getRegistDate() {
 		return registDate;
 	}
 	public void setRegistDate(String registDate) {
 		this.registDate = registDate;
-	}
-	public String getBookTable() {
-		return bookTable;
-	}
-	public void setBookTable(String bookTable) {
-		this.bookTable = bookTable;
 	}	
 	
 }
