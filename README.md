@@ -37,7 +37,8 @@ test_book_backup : test_book의 백업테이블
 
 컬럼명|타입|용도
 -----|---|---
-bookID|INT|고유키
+backID|INT|고유키
+bookID|INT|test_book.bookID
 bookName|VARCHAR(100)|제목
 originPrice|DOUBLE|책원가
 registDate|DATETIME|입력날짜
